@@ -1,7 +1,7 @@
 package ru.task;
 
 import ru.task.util.Reader;
-import ru.task.util.impl.ReadFromCSV;
+import ru.task.util.impl.ReaderFromCSV;
 import ru.task.util.impl.ReaderFromJSON;
 
 import java.util.Scanner;
@@ -17,7 +17,7 @@ public class Main {
                 reader = new ReaderFromJSON();
                 reader.readFromFile(path);
             } else if (path.endsWith(".csv")) {
-                reader = new ReadFromCSV();
+                reader = new ReaderFromCSV();
                 reader.readFromFile(path);
             } else {
                 System.out.println("Wrong file type");

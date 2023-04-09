@@ -1,14 +1,16 @@
 package ru.task.util.impl;
 
 import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import ru.task.util.Reader;
 import ru.task.util.handler.Handler;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Paths;
 
-public class ReadFromCSV implements Reader {
+public class ReaderFromCSV implements Reader {
     @Override
     public void readFromFile(String path) {
         CSVReader reader;
@@ -31,7 +33,7 @@ public class ReadFromCSV implements Reader {
                 handler.handleGroupWeight(group, weight);
                 handler.handleMinMax(weight);
             }
-        } catch (Exception e) {
+        } catch (IOException | CsvValidationException e) {
             System.out.println("Some problems " + e.getMessage());
             return;
         }
