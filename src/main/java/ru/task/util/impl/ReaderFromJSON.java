@@ -39,6 +39,7 @@ public class ReaderFromJSON implements Reader {
             System.out.println("Some problems " + e.getMessage());
             return;
         }
+        parser.close();
 
         System.out.println(handler.printDuplicate());
         System.out.println(handler.printMinMax());
