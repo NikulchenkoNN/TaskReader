@@ -35,6 +35,7 @@ public class ReadFromCSV implements Reader {
             System.out.println("Some problems " + e.getMessage());
             return;
         }
+
         System.out.println(handler.printDuplicate());
         System.out.println(handler.printMinMax());
         System.out.println(handler.printGroupWeight());
